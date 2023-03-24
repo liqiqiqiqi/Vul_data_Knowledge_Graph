@@ -18,9 +18,21 @@ We display the constructed vulnerability knowledge graph in Neo4j 4.4.5. We use 
 
 ## Run
 
-cd Connected
+Data Acquire Spider
 
-python neo4j_vul.py
+- cd VulKG_spider_demo
+
+- cd CWE_Database
+
+- python MainScraper.py 
+
+   As for `uri = "bolt://localhost:7687", auth=("neo4j", "admin")` ,change your own name and password
+
+Knowledge Graph Construction
+
+- cd VulKG_spider_demo
+- cd Connected
+- python neo4j_vul.py
 
 ## Result
 
@@ -29,3 +41,7 @@ python neo4j_vul.py
 `match(m:vul_data{name:"capec109"})-[r]-(n:vul_data) return m,n`
 
 ![image-20230324023242850](https://github.com/liqiqiqiqi/demo/blob/master/image-20230324023242850.png)
+
+Embedding result
+
+![image-20230324153931485](https://github.com/liqiqiqiqi/demo/blob/master/image-20230324133101270.png)
