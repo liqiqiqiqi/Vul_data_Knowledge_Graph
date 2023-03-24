@@ -16,23 +16,32 @@ We display the constructed vulnerability knowledge graph in Neo4j 4.4.5. We use 
 
 `pip install neo4j`
 
-## Run
+## Getting Started
 
-Data Acquire Spider
+Spider
 
-- cd VulKG_spider_demo
+```
+git clone https://github.com/liqiqiqiqi/Vul_data_Knowledge_Graph.git
 
-- cd CWE_Database
+cd VulKG_spider_demo
 
-- python MainScraper.py 
+cd CWE_Database
 
-   As for `uri = "bolt://localhost:7687", auth=("neo4j", "admin")` ,change your own name and password
+python MainScraper.py 
+```
 
-Knowledge Graph Construction
+In MainScraper.py `uri = "bolt://localhost:7687", auth=("neo4j", "admin")` ,change your own name and password.
 
-- cd VulKG_spider_demo
-- cd Connected
-- python neo4j_vul.py
+Knowledge Graph
+
+```
+cd VulKG_spider_demo
+
+cd Connected
+
+python neo4j_vul.py
+```
+
 
 ## Result
 
