@@ -1,0 +1,1118 @@
+{
+  "type": "bundle",
+  "id": "bundle--5f2dd07c-a66b-4bd8-add5-c31c1a53038f",
+  "objects": [
+    {
+      "type": "malware",
+      "id": "malware--1c51ac91-aa92-4311-bb14-6e4643762914",
+      "name": "MINEBRIDGE",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-14T22:56:24.423Z",
+      "modified": "2021-07-14T22:56:24.424Z",
+      "description": "MINEBRIDGE is a 32-bit C++ backdoor designed to be loaded by an older, unpatched instance of the legitimate remote desktop software TeamViewer by DLL load-order hijacking. The backdoor hooks Windows APIs to prevent the victim from seeing the TeamViewer application. By default, MINEBRIDGE conducts command and control (C2) communication via HTTPS POST requests to hard-coded C2 domains. The POST requests contain a GUID derived from the system’s volume serial number, a TeamViewer unique id and password, username, computer name, operating system version, and beacon interval. MINEBRIDGE can also communicate with a C2 server by sending TeamViewer chat messages using a custom window procedure hook. Collectively, the two C2 methods support commands for downloading and executing payloads, downloading arbitrary files, self-deletion and updating, process listing, shutting down and rebooting the system, executing arbitrary shell commands, process elevation, turning on/off TeamViewer's microphone, and gathering system UAC information.\n\nMINEBRIDGE’s default method of communication is sending HTTPS POST requests over TCP port 443. This method of communication is always active; however, the beacon-interval time may be changed via a command. Before sending any C2 beacons, the sample waits to collect the TeamViewer generated unique id (<tv_id>) and password (<tv_pass>) via SetWindowsTextW hooks.",
+      "malware_types": [
+        "backdoor"
+      ],
+      "first_seen": "2020-02-05T19:00:00.000Z",
+      "lang": "C++"
+    },
+    {
+      "type": "malware",
+      "id": "malware--be0b295e-7732-4a47-a237-be1c016d212b",
+      "name": "Living off the Land",
+      "description": "Attackers' trends tend to come and go. But one popular technique we're seeing at this time is the use of living-off-the-land binaries — or 'LoLBins'. LoLBins are used by different actors combined with fileless malware and legitimate cloud services to improve chances of staying undetected within an organisation, usually during post-exploitation attack phases.\n\nLiving-off-the-land tactics mean that attackers are using pre-installed tools to carry out their work. This makes it more difficult for defenders to detect attacks and researchers to identify the attackers behind the campaign. In the attacks we're seeing, there are binaries supplied by the victim's operating system that are normally used for legitimate purposes, but in these cases, are being abused by the attackers.\n",
+      "malware_types": [
+        "trojan",
+        "spyware"
+      ],
+      "is_family": true,
+      "aliases": [
+        "LOLBAS"
+      ],
+      "first_seen": "2018-06-08T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-14T17:36:53.500Z",
+      "modified": "2021-07-14T17:36:53.502Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--e5409a42-d236-44dc-9ecc-75e653e58272",
+      "name": "Gelup",
+      "description": "The unpacked payload is written in C++ and basically works as a downloader for another malware. What makes Gelup different, however, is its obfuscation technique and UAC-bypassing function bymocking trusted directories (spoofing the file’s execution path in a trusted directory), abusing auto-elevated executables, and using the dynamic-link library (DLL) side-loading technique.\n\nFirst, Gelup resolves most Windows application programming interfaces (APIs) by using the hash just before calling it —a common technique used by a lot of malware families. Second, the strings in Gelup’s code are decrypted at runtime.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "first_seen": "2020-06-20T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-14T16:47:36.985Z",
+      "modified": "2021-07-14T16:47:36.986Z",
+      "lang": "C++"
+    },
+    {
+      "type": "malware",
+      "id": "malware--8e2d6510-b825-452f-a343-b79c2750a586",
+      "name": "GameOver Zeus",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-14T15:12:32.711Z",
+      "modified": "2021-07-14T15:12:32.735Z",
+      "malware_types": [
+        "trojan",
+        "bot",
+        "ddos",
+        "downloader"
+      ],
+      "description": "GOZ, which is often propagated through spam and phishing messages, is primarily used by cybercriminals to harvest banking information, such as login credentials, from a victim’s computer. Infected systems can also be used to engage in other malicious activities, such as sending spam or participating in distributed denial-of-service (DDoS) attacks.\n\nPrior variants of the Zeus malware utilized a centralized command and control (C2) botnet infrastructure to execute commands. Centralized C2 servers are routinely tracked and blocked by the security community. GOZ, however, utilizes a P2P network of infected hosts to communicate and distribute data, and employs encryption to evade detection. These peers act as a massive proxy network that is used to propagate binary updates, distribute configuration files, and to send stolen data. Without a single point of failure, the resiliency of GOZ’s P2P infrastructure makes takedown efforts more difficult.",
+      "first_seen": "2010-03-10T19:00:00.000Z",
+      "aliases": [
+        "P2P ZeuS"
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--4011d9ff-0435-4fa3-8650-b704cf012817",
+      "name": "FlowerPippi",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-13T22:36:21.538Z",
+      "modified": "2021-07-13T22:36:21.539Z",
+      "description": "Some of FlowerPippi’s variants were packed by a custom packer —the same one that TA505 uses. The unpacked payload is written in C++ and works as backdoor or downloader malware. FlowerPippi doesn’t have an AutoRun function by itself; it is standalone and straightforwardly retrieves the payload.",
+      "malware_types": [
+        "backdoor",
+        "downloader"
+      ],
+      "first_seen": "2019-06-20T18:00:00.000Z",
+      "lang": "C++"
+    },
+    {
+      "type": "malware",
+      "id": "malware--3583f0c5-6a4f-4af1-9a5f-4fe70b8e3fa3",
+      "name": "EmailStealer",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-13T22:18:59.661Z",
+      "modified": "2021-07-13T22:18:59.663Z",
+      "description": "Steals simple mail transfer protocol (SMTP) credentials and email addresses in the victim’s machine.",
+      "malware_types": [
+        "spyware"
+      ],
+      "first_seen": "2019-05-16T18:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--c8d16907-911b-44d7-85b3-d88126e7d523",
+      "name": "Dudear",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-13T22:08:32.578Z",
+      "modified": "2021-07-13T22:08:32.579Z",
+      "description": " The Excel file contains malicious macros that install Dudear malware. This campaign by the group shows how they have adapted and changed techniques in an attempt to evade detection. Past email campaigns to deliver Dudear would do so via an attachment or malicious URL.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "first_seen": "2020-10-06T18:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--0f5729f7-b9a4-4608-a796-2de2946db635",
+      "name": "Amadey",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-13T20:22:52.242Z",
+      "modified": "2021-07-13T20:22:52.243Z",
+      "description": "Amadey is a simple Trojan bot first discovered in October of 2018. It is primarily used for collecting information on a victim's environment, though it can also deliver other malware. A major infection vector for Amadey are exploit kits such as RigEK and Fallout EK. During our monitoring, we also observed this Trojan being delivered via AZORult Infostealer on February 23rd to March 1st, and April 18th to June 5th. The sample hash values were not changed frequently. Recently, TA505 used Amadey for their campaign in April 2019.",
+      "malware_types": [
+        "dropper",
+        "trojan"
+      ],
+      "first_seen": "2018-10-01T18:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--c3758369-7a01-41fc-a53a-e8ff5d5de424",
+      "name": "Shifu",
+      "description": "In October 2015, we observed several campaigns in which TA505 targeted Japanese and UK organizations with the Shifu banking Trojan [6]. Shifu is relatively common in Japan but was a new addition to TA505’s toolbox. It appears that they introduced Shifu after high-profile law enforcement actions impacted Dridex distribution. However, TA505 was also among the first actors to return to high-volume Dridex distribution this same month, even as they demonstrated their ability to diversify and deliver threats beyond Dridex.",
+      "malware_types": [
+        "ransomware",
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T20:28:05.493Z",
+      "modified": "2021-07-06T20:28:05.496Z"
+    },
+    {
+      "type": "identity",
+      "id": "identity--b52e3846-a8ac-494f-b451-4f81caf34d99",
+      "name": "Andrey Shkolovoy",
+      "roles": [
+        ""
+      ],
+      "identity_class": "individual",
+      "spec_version": "2.1",
+      "created": "2021-07-06T17:25:19.866Z",
+      "modified": "2021-07-06T17:25:19.868Z",
+      "alias": "Caramba"
+    },
+    {
+      "type": "identity",
+      "id": "identity--c994fa58-864e-4fd1-be22-5b8b197f7ac0",
+      "name": "Maksim Viktorovich Yakubets",
+      "spec_version": "2.1",
+      "created": "2021-07-06T17:25:18.672Z",
+      "modified": "2021-07-06T17:25:18.678Z",
+      "roles": [
+        "leader"
+      ],
+      "identity_class": "individual",
+      "alias": "Aqua"
+    },
+    {
+      "type": "identity",
+      "id": "identity--f3815b3c-513b-4da3-8620-777eea02c2d3",
+      "name": "Andrei Ghinkul",
+      "spec_version": "2.1",
+      "created": "2021-07-06T17:25:13.383Z",
+      "modified": "2021-07-06T17:25:13.386Z",
+      "roles": [
+        "administrator"
+      ],
+      "identity_class": "individual",
+      "alias": "Smilex"
+    },
+    {
+      "type": "identity",
+      "id": "identity--b77a4710-d0a8-4a1e-a91e-45ae69801e3f",
+      "name": "Igor Turashev",
+      "roles": [
+        "administrator"
+      ],
+      "identity_class": "individual",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:55:23.253Z",
+      "modified": "2021-07-06T16:55:23.255Z",
+      "alias": "nintutu"
+    },
+    {
+      "type": "malware",
+      "id": "malware--88572caf-0f78-4749-b199-dc0ec2460e31",
+      "name": "PayloadBin",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:23:15.005Z",
+      "modified": "2021-07-06T16:23:15.006Z",
+      "description": "After analyzing the new ransomware, both Fabian Wosar of Emsisoft and Michael Gillespie of ID Ransomware confirmed that the ransomware is a rebranding of Evil Corp's previous ransomware operations. When installed, the ransomware will append the .PAYLOADBIN extension to encrypted files",
+      "first_seen": "2021-06-03T18:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--11c1f53c-5bdb-4ed7-a5c3-9e5b8e9943ca",
+      "name": "Hades",
+      "description": "Hades ransomware is a 64-bit compiled variant of WastedLocker upgraded with supplementary code obfuscation and a few minor feature changes.\nHades ransomware shares the majority of its functionality with WastedLocker; the ISFB-inspired static configuration, multi-staged persistence/installation process, file/directory enumeration, and encryption functionality are largely unchanged",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "first_seen": "2020-12-01T19:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:23:04.521Z",
+      "modified": "2021-07-06T16:23:04.522Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--2471e7ad-5df9-4298-8aa5-7cdf6720148a",
+      "name": "WastedLocker",
+      "description": "WastedLocker does not come preloaded with a list of specific file extensions to search for encrypt, but has an exclusion list of directories and files not to target. For example, it excludes executables, binaries, and DLLs, among many others. The encryption routine is simple, using AES and a new key for every file. The ransom demand is not included in the ransom note and victims are instructed to send an email to one of two unique addresses in order to find out the price for decryption.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "first_seen": "2020-05-01T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:23:01.153Z",
+      "modified": "2021-07-06T16:23:01.154Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--2e98087a-62e7-45a7-b1a2-0fcc44458db4",
+      "name": "Jaff",
+      "description": "Jaff was not dramatically different from other ransomware strains. The payment portal was initially similar to the one used by Locky and Bart. It was primarily notable for its high-volume campaigns and its association with TA505, given the actor’s propensity for massive campaigns and ability to dominate the email landscape. Jaff appeared in multi-million message campaigns for roughly a month and then promptly disappeared as soon as a decryptor was released in mid-June 2017.",
+      "malware_types": [
+        "ransomware",
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2017-05-01T18:00:00.000Z",
+      "last_seen": "2017-06-14T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:21:08.347Z",
+      "modified": "2021-07-06T16:21:08.349Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--9add8f2d-2fe9-4df5-98c1-900c83bd938b",
+      "name": "Bart",
+      "description": "It was a secondary payload downloaded by Rockloader, the initial payload in a large email campaign using zipped JavaScript attachments. The Bart ransom screen was visually similar to Locky’s but Bart had one important distinction: it could encrypt files without contacting a command and control server. However, we have not seen Bart since, suggesting that this was either an experiment or that the ransomware did not function as expected",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "first_seen": "2016-06-24T18:00:00.000Z",
+      "last_seen": "2016-06-24T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:16:23.689Z",
+      "modified": "2021-07-06T16:16:23.690Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--d40669d6-14c9-4bcf-81ae-051b4602a275",
+      "name": "Rockloader",
+      "description": "Rockloader was the initial payload downloaded by malicious attached JavaScript files. Once Rockloader was installed, it downloaded Locky and, in some cases, Pony and Kegotip.",
+      "malware_types": [
+        null
+      ],
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:16:22.315Z",
+      "modified": "2021-07-06T16:16:22.316Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--1761e681-ce64-40e6-b896-0660fa235b68",
+      "name": "Kegotip",
+      "description": "Kegotip is an infostealer (credentials and email addresses) used to facilitate other crimeware activities. It steals credentials from various FTP clients, Outlook, and Internet Explorer. It also will gather email addresses scraped from files stored on the computer. This information can be used to facilitate future spam campaigns by the perpetrator or may be sold to other actors.",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2017-04-01T18:00:00.000Z",
+      "last_seen": "2017-04-30T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:16:20.995Z",
+      "modified": "2021-07-06T16:16:20.996Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--9cd6f4e6-124a-43dc-9d4a-e69784a28cc4",
+      "name": "TrickBot",
+      "description": "TrickBot is a Trojan spyware program that has mainly been used for targeting banking sites in United States, Canada, UK, Germany, Australia, Austria, Ireland, London, Switzerland, and Scotland. TrickBot first emerged in the wild in September 2016 and appears to be a successor to Dyre.",
+      "malware_types": [
+        "spyware",
+        "trojan"
+      ],
+      "is_family": true,
+      "aliases": [
+        "The Trick"
+      ],
+      "first_seen": "2021-09-01T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:14:20.839Z",
+      "modified": "2021-07-06T16:14:20.839Z",
+      "lang": "C++"
+    },
+    {
+      "type": "malware",
+      "id": "malware--208c36e7-063e-4991-b14f-0ca3d4e16ee8",
+      "name": "ServHelper",
+      "description": "there are two distinct variants of ServHelper: a “tunnel” variant and a “downloader” variant. The “tunnel” variant has more features and focuses on setting up reverse SSH tunnels to allow the threat actor to access the infected host via Remote Desktop Protocol (RDP). Once ServHelper establishes remote desktop access, the malware contains functionality for the threat actor to “hijack” legitimate user accounts or their web browser profiles and use them as they see fit. The “downloader” variant is stripped of the tunneling and hijacking functionality and is used as a basic downloader.",
+      "malware_types": [
+        "backdoor"
+      ],
+      "is_family": true,
+      "first_seen": "2018-11-01T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:14:18.617Z",
+      "modified": "2021-07-06T16:14:18.620Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--c2b06fff-e508-4e49-bb40-061db9256424",
+      "name": "SDBbot",
+      "description": "SDBbot is a new remote access Trojan (RAT) written in C++ that has been delivered by the Get2 downloader in recent TA505 campaigns. Its name is derived from the debugging log file (sdb.log.txt) and DLL name (BotDLL[.]dll) used in the initial analyzed sample. It also makes use of application shimming [1] for persistence. SDBbot is composed of three pieces: an installer, a loader, and a RAT component.",
+      "malware_types": [
+        "backdoor",
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2019-10-16T18:00:00.000Z",
+      "last_seen": "2020-04-20T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:14:17.065Z",
+      "modified": "2021-07-06T16:14:17.065Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--9660cdb8-244a-4cdf-a193-1deea1f90fd5",
+      "name": "Net",
+      "description": "The Net utility is a component of the Windows operating system. It is used in command-line operations for control of users, groups, services, and network connections. \nNet has a great deal of functionality, much of which is useful for an adversary, such as gathering system and network information for Discovery, moving laterally through SMB/Windows Admin Shares using net use commands, and interacting with services. The net1.exe utility is executed for certain functionality when net.exe is run and can be used directly in commands such as net1 user.",
+      "malware_types": [
+        "backdoor"
+      ],
+      "is_family": true,
+      "first_seen": "2019-06-12T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:12:24.867Z",
+      "modified": "2021-07-06T16:12:24.873Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--2215e548-b0a8-42bc-87a9-e6b1ef98703e",
+      "name": "Get2",
+      "description": "Get2 is a downloader written in C++ that has been used by TA505 to deliver FlawedGrace, FlawedAmmyy, Snatch and SDBbot.",
+      "malware_types": [
+        "downloader"
+      ],
+      "is_family": true,
+      "first_seen": "2019-10-16T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:12:22.938Z",
+      "modified": "2021-07-06T16:12:22.939Z",
+      "lang": "C++"
+    },
+    {
+      "type": "malware",
+      "id": "malware--d9f6214f-8bce-4220-b2e5-5731d383308b",
+      "name": "FlawedAmmyy",
+      "description": "Ammyy Admin is a popular remote access tool used by businesses and consumers to handle remote control and diagnostics on Microsoft Windows machines. However, leaked source code for Version 3 of Ammyy Admin has emerged as a Remote Access Trojan called FlawedAmmyy appearing in a variety of malicious campaigns. For infected individuals, this means that attackers potentially have complete access to their PCs, giving threat actors the ability to access a variety of services, steal files and credentials, and much more.  We have seen FlawedAmmyy in both massive campaigns, potentially creating a large base of compromised computers, as well as targeted campaigns that create opportunities for actors to steal customer data, proprietary information, and more.",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2016-10-11T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:12:18.885Z",
+      "modified": "2021-07-06T16:12:18.885Z",
+      "aliases": [
+        "AndroMut"
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--c0eafd3a-7e9f-424b-8040-baca54ba7468",
+      "name": "CLOP",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:12:17.221Z",
+      "modified": "2021-07-06T16:12:17.222Z",
+      "description": "CL0P is the ransomware that is deployed after initial TA505 intrusions. Each CL0P sample is unique to a victim. First, it contains a 1024 bits RSA public key used in the data encryption. Second, it contains a personalized ransom note.",
+      "malware_types": [
+        "remote-access-trojan",
+        "ransomware"
+      ],
+      "first_seen": "2020-06-02T18:00:00.000Z",
+      "lang": "C++",
+      "last_seen": "2021-09-11T18:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--f4cc49e4-131e-43b7-ab30-da9c41d4821d",
+      "name": "FlawedGrace",
+      "description": "FlawedGrace creates, encrypts, and stores a configuration file containing the C&C IPs and ports in a “<hex digits>.dat” file (e.g., “C:\\ProgramData\\21851a60.dat”). The first 16 bytes of the file are an AES initialization vector (IV). The rest of the data is AES-encrypted in CBC mode. In the analyzed sample, the AES key was hardcoded as “c3oeCSIfx0J6UtcV”. Once decrypted, the configuration data is stored as a custom serialization (Figure 7). Early versions of the malware used the class names “GraceParams” and “GraceValue” when interacting with this part of the code, so it is likely that the serialization was designed and developed by the malware developer and not a standard format.\n\n",
+      "malware_types": [
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2017-11-01T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-09T18:00:00.000Z",
+      "modified": "2021-07-06T16:12:00.000Z",
+      "lang": "C++"
+    },
+    {
+      "type": "malware",
+      "id": "malware--8bf0874d-0c8d-4923-8c6e-0d17771877a8",
+      "name": "GlobeImposter",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:10:30.047Z",
+      "modified": "2021-07-06T16:10:30.047Z",
+      "description": "Ransom.GlobeImposter is a ransomware application that will encrypt files on a victim machine and demand payment to retrieve the information. Ransom.GlobeImposter is also known as Fake Globe due to how the software mimics the Globe ransomware family . Ransom.GlobeImposter may be distributed through a malicious spam campaign, recognizable only with their lack of message content and an attached ZIP file. This type of spam is called a “blank slate.” Ransom.GlobeImposter is also distributed via exploits and malicious advertising, fake updates, and repacked infected installers.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "first_seen": "2021-08-01T18:00:00.000Z",
+      "aliases": [
+        "Fake Globe"
+      ]
+    },
+    {
+      "type": "malware",
+      "id": "malware--68dd518e-31d3-4f04-aa6b-1cde1d31d14b",
+      "name": "Philadelphia",
+      "description": "Philadelphia is simple to customize and deploy. Although we most often associate ransomware, including Philadelphia, with large-scale, \"spray and pray\" campaigns that send high message volumes to a wide spectrum of consumers and organizations, we are beginning to see significant differentiation among attacks, ransoms, scale, and even targeting.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "first_seen": "2016-09-01T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:10:27.182Z",
+      "modified": "2021-07-06T16:10:27.184Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--1db2eec7-01a1-4ee1-a621-350ae4d9e0d0",
+      "name": "Pony",
+      "description": "Malware and controller of the botnet active since 2011, specialising in the theft of access codes and crypto-assets, but also in the distribution\nof malware, v1.9 of which leaked at the end of 2012 [5]. Pony has distributed such malware as GoZ, Necurs, Dyre, Vawtrak, Cryptolock and\nCribit. In 2013, there were several Pony botnets.",
+      "malware_types": [
+        "downloader"
+      ],
+      "is_family": true,
+      "first_seen": "2011-06-01T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:10:25.320Z",
+      "modified": "2021-07-06T16:10:25.322Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--d36a5a29-f6fa-47b2-baf0-486bf167b2f3",
+      "name": "Locky",
+      "description": "As with most malware campaigns this year, actors are distributing Locky ransomware through document attachments spam. In this campaign, messages from random senders with the subject \"ATTN: Invoice J-12345678\" deliver an attachment \"invoice_J-12345678.doc\". The attachments are MS Word documents containing macros which download and install the Locky ransomware, first observed by Proofpoint on February 16, 2016.",
+      "malware_types": [
+        "ransomware",
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2016-02-01T19:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:10:24.098Z",
+      "modified": "2021-07-06T16:10:24.099Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--0abf781e-96d1-4a5d-b4fe-671bc6d980e8",
+      "name": "CryptFile2",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:01:56.989Z",
+      "modified": "2021-07-06T16:01:56.991Z",
+      "description": "CryptFIle2 started spreading in mid-March 2016, delivered by Nuclear and Neutrino exploit kits. We named this ransomware based on the debug string in one of the samples,  “S:\\Crypt\\CryptFIle2\\Release\\CryptFIle2.pdb”. This ransomware encrypts files of interest and demands Bitcoin payment for an unknown sum via email communication with the attacker.\n\n",
+      "first_seen": "2016-03-15T18:00:00.000Z",
+      "malware_types": [
+        "ransomware",
+        "exploit-kit"
+      ],
+      "last_seen": "2016-08-09T18:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--a0c5c4bf-5fca-4039-9f7d-a1ce7e6b6b62",
+      "name": "Dridex",
+      "description": "Dridex is a banking Trojan that has been used for financial gain. Dridex was created from the source code of the Bugat banking trojan (also known as Cridex)",
+      "malware_types": [
+        "ransomware",
+        "remote-access-trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2014-06-22T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:01:55.976Z",
+      "modified": "2021-07-06T16:01:55.978Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--0432da58-bdf3-4958-b17f-f4f3bb4b114a",
+      "name": "CryptoLocker",
+      "description": "It propagated via infected email attachments, and via an existing Gameover ZeuS botnet.[3] When activated, the malware encrypted certain types of files stored on local and mounted network drives using RSA public-key cryptography, with the private key stored only on the malware's control servers. The malware then displayed a message which offered to decrypt the data if a payment (through either bitcoin or a pre-paid cash voucher) was made by a stated deadline, and it threatened to delete the private key if the deadline passes. If the deadline was not met, the malware offered to decrypt data via an online service provided by the malware's operators, for a significantly higher price in bitcoin. There was no guarantee that payment would release the encrypted content.",
+      "malware_types": [
+        "ransomware",
+        "trojan"
+      ],
+      "is_family": true,
+      "first_seen": "2013-09-05T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:01:54.225Z",
+      "modified": "2021-07-06T16:01:54.225Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--5b0dee4d-30d5-438c-9144-ed38a2c7abab",
+      "name": "Bitpaymer",
+      "description": "BitPaymer is a ransomware variant first observed in August 2017 targeting hospitals in the U.K. BitPaymer uses a unique encryption key, ransom note, and contact information for each operation. BitPaymer has several indicators suggesting overlap with the Dridex malware and is often delivered via Dridex.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "first_seen": "2017-08-01T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:01:52.784Z",
+      "modified": "2021-07-06T16:01:52.786Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--b515cf33-7b25-468f-a45c-123dd7757039",
+      "name": "DoppelPaymer",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:01:51.375Z",
+      "modified": "2021-07-06T16:01:51.375Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--62116c5a-ca37-48fa-a213-d87fc6b696d8",
+      "name": "CryptoMix",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:01:48.835Z",
+      "modified": "2021-07-06T16:01:48.835Z"
+    },
+    {
+      "type": "location",
+      "id": "location--0fccefdf-65cf-4766-ab40-a3329c83b57e",
+      "name": "Russia",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:00:52.641Z",
+      "modified": "2021-07-06T16:00:52.643Z",
+      "country": "Russia"
+    },
+    {
+      "type": "threat-actor",
+      "id": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "name": "TA505",
+      "description": "This well-known, infamous cybercrime enterprise is allegedly based out of Moscow, Russia. The group is known for using malicious programs to steal money from victims' bank accounts. Active since 2009, it has targeted a plethora of bank accounts around the world, stealing hundreds of millions of dollars. It is believed to be amongst the world's largest and most dangerous hacking groups. The adversary uses Zeus malware and Dridex banking Trojan in its campaigns.",
+      "threat_actor_types": [
+        "criminal",
+        "hacker"
+      ],
+      "aliases": [
+        "Evil Corp",
+        "Hive0065",
+        "Dudear",
+        "SectorJ04",
+        "Dridex gang",
+        "INDRIK SPIDER"
+      ],
+      "first_seen": "June 22, 2014",
+      "goals": [
+        "financial"
+      ],
+      "resource_level": "government",
+      "primary_motivation": "personal-gain",
+      "personal_motivations": [
+        null
+      ],
+      "spec_version": "2.1",
+      "created": "2021-07-06T15:36:55.822Z",
+      "modified": "2021-07-06T15:36:55.823Z"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--1c51ac91-aa92-4311-bb14-6e4643762914",
+      "type": "relationship",
+      "created": "2021-07-14T23:00:37.418Z",
+      "modified": "2021-07-14T23:00:37.423Z",
+      "id": "relationship--46937367-757b-4f6d-a790-480ee2c92755",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--be0b295e-7732-4a47-a237-be1c016d212b",
+      "type": "relationship",
+      "created": "2021-07-14T22:52:14.373Z",
+      "modified": "2021-07-14T22:52:14.392Z",
+      "id": "relationship--a706e51a-bc1b-439d-8c7e-8e2a37e22429",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--e5409a42-d236-44dc-9ecc-75e653e58272",
+      "type": "relationship",
+      "created": "2021-07-14T17:08:37.294Z",
+      "modified": "2021-07-14T17:08:37.296Z",
+      "id": "relationship--574628af-62e5-4375-a52f-a17c18a0eb73",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--8e2d6510-b825-452f-a343-b79c2750a586",
+      "type": "relationship",
+      "created": "2021-07-14T16:37:39.573Z",
+      "modified": "2021-07-14T16:37:39.574Z",
+      "id": "relationship--43919f18-0c5d-4043-beb9-e884a3310862",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--4011d9ff-0435-4fa3-8650-b704cf012817",
+      "type": "relationship",
+      "created": "2021-07-13T22:53:55.596Z",
+      "modified": "2021-07-13T22:53:55.598Z",
+      "id": "relationship--4f03c827-87c4-4e10-850c-2bb665b29265",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--3583f0c5-6a4f-4af1-9a5f-4fe70b8e3fa3",
+      "type": "relationship",
+      "created": "2021-07-13T22:35:29.903Z",
+      "modified": "2021-07-13T22:35:29.912Z",
+      "id": "relationship--ec17f35b-fd79-43f9-97b7-cc566d13f5a8",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--c8d16907-911b-44d7-85b3-d88126e7d523",
+      "type": "relationship",
+      "created": "2021-07-13T22:12:39.649Z",
+      "modified": "2021-07-13T22:12:39.653Z",
+      "id": "relationship--a4fd1eb4-2348-4530-be05-0e9c301c0664",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--0f5729f7-b9a4-4608-a796-2de2946db635",
+      "type": "relationship",
+      "created": "2021-07-13T21:36:49.634Z",
+      "modified": "2021-07-13T21:36:49.635Z",
+      "id": "relationship--6a2965b5-f405-42e6-bbc7-c4c0a0f490e7",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--c3758369-7a01-41fc-a53a-e8ff5d5de424",
+      "type": "relationship",
+      "created": "2021-07-06T20:28:11.674Z",
+      "modified": "2021-07-06T20:28:11.675Z",
+      "id": "relationship--be37f7dc-a995-4f3e-9d3c-2252efcb144a",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "identity--c994fa58-864e-4fd1-be22-5b8b197f7ac0",
+      "target_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "type": "relationship",
+      "created": "2021-07-06T17:55:22.208Z",
+      "modified": "2021-07-06T17:55:22.208Z",
+      "id": "relationship--605623f2-145f-4a23-a168-f63bcfe10e45",
+      "relationship_type": "located-at"
+    },
+    {
+      "source_ref": "identity--b52e3846-a8ac-494f-b451-4f81caf34d99",
+      "target_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "type": "relationship",
+      "created": "2021-07-06T17:55:17.784Z",
+      "modified": "2021-07-06T17:55:17.786Z",
+      "id": "relationship--932c5201-d219-4f4e-8238-7531597a165c",
+      "relationship_type": "located-at"
+    },
+    {
+      "source_ref": "identity--b77a4710-d0a8-4a1e-a91e-45ae69801e3f",
+      "target_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "type": "relationship",
+      "created": "2021-07-06T17:55:05.021Z",
+      "modified": "2021-07-06T17:55:05.026Z",
+      "id": "relationship--a5572b60-a2b4-4b93-b891-dd36507b70e5",
+      "relationship_type": "located-at"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--18b0a423-1564-418d-84b3-37347c7e3a28",
+      "relationship_type": "related-to",
+      "source_ref": "identity--f3815b3c-513b-4da3-8620-777eea02c2d3",
+      "target_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "spec_version": "2.1",
+      "created": "2021-07-06T17:54:27.432Z",
+      "modified": "2021-07-06T17:54:27.434Z"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--2471e7ad-5df9-4298-8aa5-7cdf6720148a",
+      "type": "relationship",
+      "created": "2021-07-06T16:24:26.734Z",
+      "modified": "2021-07-06T16:24:26.736Z",
+      "id": "relationship--ba20e8bb-9943-4529-a468-5430ba6a65cb",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--88572caf-0f78-4749-b199-dc0ec2460e31",
+      "type": "relationship",
+      "created": "2021-07-06T16:24:20.079Z",
+      "modified": "2021-07-06T16:24:20.080Z",
+      "id": "relationship--d93103a1-d081-4460-a651-f006173c4b7c",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--11c1f53c-5bdb-4ed7-a5c3-9e5b8e9943ca",
+      "type": "relationship",
+      "created": "2021-07-06T16:24:12.798Z",
+      "modified": "2021-07-06T16:24:12.800Z",
+      "id": "relationship--afbf948e-226f-45f4-8a7b-9adee944d307",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--9add8f2d-2fe9-4df5-98c1-900c83bd938b",
+      "type": "relationship",
+      "created": "2021-07-06T16:22:25.808Z",
+      "modified": "2021-07-06T16:22:25.809Z",
+      "id": "relationship--855e1616-58e8-4cf0-8bae-16f7db00bb86",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--2e98087a-62e7-45a7-b1a2-0fcc44458db4",
+      "type": "relationship",
+      "created": "2021-07-06T16:22:22.209Z",
+      "modified": "2021-07-06T16:22:22.210Z",
+      "id": "relationship--60d2ec4a-a062-4a7d-a6ab-2eab8dfa508c",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--1761e681-ce64-40e6-b896-0660fa235b68",
+      "type": "relationship",
+      "created": "2021-07-06T16:22:17.263Z",
+      "modified": "2021-07-06T16:22:17.264Z",
+      "id": "relationship--2c71be40-bf03-4ed3-bf71-15361d57f777",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--d40669d6-14c9-4bcf-81ae-051b4602a275",
+      "type": "relationship",
+      "created": "2021-07-06T16:22:14.574Z",
+      "modified": "2021-07-06T16:22:14.575Z",
+      "id": "relationship--ca6dcf96-679a-453f-af10-53dc18ae3326",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--208c36e7-063e-4991-b14f-0ca3d4e16ee8",
+      "type": "relationship",
+      "created": "2021-07-06T16:15:23.199Z",
+      "modified": "2021-07-06T16:15:23.205Z",
+      "id": "relationship--76f76bb4-4b13-4aca-b519-6e03391301c3",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--c2b06fff-e508-4e49-bb40-061db9256424",
+      "type": "relationship",
+      "created": "2021-07-06T16:15:20.597Z",
+      "modified": "2021-07-06T16:15:20.606Z",
+      "id": "relationship--ae782731-4e65-4753-a871-d64891127412",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--9cd6f4e6-124a-43dc-9d4a-e69784a28cc4",
+      "type": "relationship",
+      "created": "2021-07-06T16:15:17.872Z",
+      "modified": "2021-07-06T16:15:17.873Z",
+      "id": "relationship--4389bd53-38f9-4ce2-b30a-63391146c172",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--9660cdb8-244a-4cdf-a193-1deea1f90fd5",
+      "type": "relationship",
+      "created": "2021-07-06T16:15:10.748Z",
+      "modified": "2021-07-06T16:15:10.749Z",
+      "id": "relationship--ebd31e64-0325-4446-ad5d-a8fc3b2a16ee",
+      "relationship_type": "uses"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--3f65e24e-eb3b-4b74-8860-8cf18ea90641",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--2215e548-b0a8-42bc-87a9-e6b1ef98703e",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:15:06.381Z",
+      "modified": "2021-07-06T16:15:06.383Z"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--f4cc49e4-131e-43b7-ab30-da9c41d4821d",
+      "type": "relationship",
+      "created": "2021-07-06T16:15:01.988Z",
+      "modified": "2021-07-06T16:15:01.990Z",
+      "id": "relationship--56ccad6a-199e-4254-aa00-0476d3a15fb7",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--d9f6214f-8bce-4220-b2e5-5731d383308b",
+      "type": "relationship",
+      "created": "2021-07-06T16:14:59.716Z",
+      "modified": "2021-07-06T16:14:59.718Z",
+      "id": "relationship--3e2a8274-45be-4685-819f-616e8c3a0991",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--c0eafd3a-7e9f-424b-8040-baca54ba7468",
+      "type": "relationship",
+      "created": "2021-07-06T16:14:57.915Z",
+      "modified": "2021-07-06T16:14:57.918Z",
+      "id": "relationship--5a05930e-f0d4-4021-aed4-b3ac05629449",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--1db2eec7-01a1-4ee1-a621-350ae4d9e0d0",
+      "type": "relationship",
+      "created": "2021-07-06T16:11:53.830Z",
+      "modified": "2021-07-06T16:11:53.830Z",
+      "id": "relationship--35e8840b-ec6a-4cd2-86ee-32521c4e82ba",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--d36a5a29-f6fa-47b2-baf0-486bf167b2f3",
+      "type": "relationship",
+      "created": "2021-07-06T16:11:52.030Z",
+      "modified": "2021-07-06T16:11:52.031Z",
+      "id": "relationship--38fbd0b9-9119-437c-9b6e-ab0222860f06",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--8bf0874d-0c8d-4923-8c6e-0d17771877a8",
+      "type": "relationship",
+      "created": "2021-07-06T16:11:50.137Z",
+      "modified": "2021-07-06T16:11:50.137Z",
+      "id": "relationship--d44f41f2-741e-44f8-b1a2-4ebcd0c43cbb",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--68dd518e-31d3-4f04-aa6b-1cde1d31d14b",
+      "type": "relationship",
+      "created": "2021-07-06T16:11:48.401Z",
+      "modified": "2021-07-06T16:11:48.403Z",
+      "id": "relationship--ae500a50-6aae-4a94-a797-483a8798daa7",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--0abf781e-96d1-4a5d-b4fe-671bc6d980e8",
+      "type": "relationship",
+      "created": "2021-07-06T16:10:19.471Z",
+      "modified": "2021-07-06T16:10:19.473Z",
+      "id": "relationship--1a173330-abb1-4aa0-8cff-60407bc24d4c",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--62116c5a-ca37-48fa-a213-d87fc6b696d8",
+      "type": "relationship",
+      "created": "2021-07-06T16:10:16.888Z",
+      "modified": "2021-07-06T16:10:16.889Z",
+      "id": "relationship--427f2dfd-405b-4a2c-a3ec-b8675de2274c",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--0432da58-bdf3-4958-b17f-f4f3bb4b114a",
+      "type": "relationship",
+      "created": "2021-07-06T16:10:14.564Z",
+      "modified": "2021-07-06T16:10:14.567Z",
+      "id": "relationship--f5cd6e05-17f2-4b5f-82a2-0786d546364a",
+      "relationship_type": "uses"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6f65c785-2f14-410f-8fcf-e69643ee7e6e",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--b515cf33-7b25-468f-a45c-123dd7757039",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:10:12.575Z",
+      "modified": "2021-07-06T16:10:12.575Z"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--887e060e-f8b8-4b03-8b1e-e15f3ca40068",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--a0c5c4bf-5fca-4039-9f7d-a1ce7e6b6b62",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:10:09.639Z",
+      "modified": "2021-07-06T16:10:09.640Z"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--5b0dee4d-30d5-438c-9144-ed38a2c7abab",
+      "type": "relationship",
+      "created": "2021-07-06T16:09:59.771Z",
+      "modified": "2021-07-06T16:09:59.773Z",
+      "id": "relationship--148177f7-690e-46ad-b78f-6c8a04b37f9b",
+      "relationship_type": "uses"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--01159ac0-b2ce-48d4-95a7-502399000ac5",
+      "relationship_type": "located-at",
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "location--0fccefdf-65cf-4766-ab40-a3329c83b57e",
+      "spec_version": "2.1",
+      "created": "2021-07-06T16:01:31.765Z",
+      "modified": "2021-07-06T16:01:31.765Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--376e0851-6b0e-4159-a96f-8a0807b7ab7f",
+      "name": "Neutrino",
+      "description": "The Neutrino exploit kit is a malicious tool kit, which can be used by attackers who are not experts on computer security. Threat actors can have zero coding experience and still use exploit kits like Neutrino to conduct their illegal activity.",
+      "malware_types": [
+        "backdoor",
+        "exploit-kit"
+      ],
+      "is_family": true,
+      "aliases": [
+        "Kasidet"
+      ],
+      "first_seen": "2014-06-18T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-15T16:03:47.416Z",
+      "modified": "2021-07-15T16:03:47.418Z"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--376e0851-6b0e-4159-a96f-8a0807b7ab7f",
+      "type": "relationship",
+      "created": "2021-07-15T16:06:40.356Z",
+      "modified": "2021-07-15T16:06:40.356Z",
+      "id": "relationship--8ffb0796-55c3-4b7c-919d-d27ec069eb7b",
+      "relationship_type": "uses"
+    },
+    {
+      "type": "malware",
+      "id": "malware--c493fb66-3484-47e6-8ea0-f521dca797c5",
+      "name": "Remote Manipulator System",
+      "description": "Remote Manipulator System (RMS) is a legitimate tool developed by Russian organization TektonIT and has been observed in campaigns conducted by TA505 as well as numerous smaller campaigns likely attributable to other, disparate, threat actors. In addition to the availability of commercial licenses, the tool is free for non-commercial use and supports the remote administration of both Microsoft Windows and Android devices.",
+      "malware_types": [
+        "backdoor"
+      ],
+      "is_family": true,
+      "aliases": [
+        "RMS"
+      ],
+      "first_seen": "2016-10-05T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-15T16:06:48.142Z",
+      "modified": "2021-07-15T16:06:48.142Z"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--c493fb66-3484-47e6-8ea0-f521dca797c5",
+      "type": "relationship",
+      "created": "2021-07-15T16:11:55.533Z",
+      "modified": "2021-07-15T16:11:55.534Z",
+      "id": "relationship--7abe2571-5e30-4ce7-a1ee-461d40141fb7",
+      "relationship_type": "uses"
+    },
+    {
+      "type": "malware",
+      "id": "malware--f5eba885-7877-484a-92e9-27f1ced0ff61",
+      "name": "Meterpreter",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-15T16:17:37.040Z",
+      "modified": "2021-07-15T16:17:37.040Z",
+      "description": "Meterpreter is an advanced, dynamically extensible payload that uses in-memory DLL injection stagers and is extended over the network at runtime. It communicates over the Metasploit Stager socket and provides a comprehensive client-side Ruby API. It features command history, tab completion, channels, and more.\n\nMeterpreter was originally written by skape for Metasploit 2.x, common extensions were merged for 3.x and is currently undergoing an overhaul for Metasploit 3.3. The server portion is implemented in plain C and is now compiled with MSVC, making it somewhat portable. The client can be written in any language but Metasploit has a full-featured Ruby client API.",
+      "malware_types": [
+        "downloader"
+      ],
+      "first_seen": "2020-02-22T19:00:00.000Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--396af395-b063-49a8-be05-60e73b30036a",
+      "name": "Snatch",
+      "description": "Snatch is a ransomware which infects victims by rebooting the PC into Safe Mode. Most of the existing security protections do not run in Safe Mode so that it the malware can act without expected countermeasures and it can encrypt as many files as it finds. It uses common packers such as UPX to hide its payload.",
+      "malware_types": [
+        "ransomware"
+      ],
+      "is_family": true,
+      "first_seen": "2019-11-05T19:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-15T16:17:29.948Z",
+      "modified": "2021-07-15T16:17:29.948Z"
+    },
+    {
+      "type": "malware",
+      "id": "malware--2a05d75d-055c-4c56-a970-e47bf0b411c1",
+      "name": "TinyMet",
+      "description": "Snatch is a ransomware which infects victims by rebooting the PC into Safe Mode. Most of the existing security protections do not run in Safe Mode so that it the malware can act without expected countermeasures and it can encrypt as many files as it finds. It uses common packers such as UPX to hide its payload.",
+      "malware_types": [
+        "bot"
+      ],
+      "is_family": true,
+      "aliases": [
+        "TiniMet"
+      ],
+      "first_seen": "2019-03-20T18:00:00.000Z",
+      "spec_version": "2.1",
+      "created": "2021-07-15T16:17:34.790Z",
+      "modified": "2021-07-15T16:17:34.790Z"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--396af395-b063-49a8-be05-60e73b30036a",
+      "type": "relationship",
+      "created": "2021-07-15T16:29:39.653Z",
+      "modified": "2021-07-15T16:29:39.653Z",
+      "id": "relationship--0e1dd7a9-7412-4299-9673-ded875c8e5c8",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--2a05d75d-055c-4c56-a970-e47bf0b411c1",
+      "type": "relationship",
+      "created": "2021-07-15T16:47:53.631Z",
+      "modified": "2021-07-15T16:47:53.631Z",
+      "id": "relationship--78d0d8d1-f43e-4bc3-b4e3-da5bd8fb8313",
+      "relationship_type": "uses"
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--f5eba885-7877-484a-92e9-27f1ced0ff61",
+      "type": "relationship",
+      "created": "2021-07-15T17:01:31.815Z",
+      "modified": "2021-07-15T17:01:31.815Z",
+      "id": "relationship--8c468c58-4233-42e6-b7b8-0c197a59d9c8",
+      "relationship_type": "uses"
+    },
+    {
+      "type": "malware",
+      "id": "malware--4cfc6fab-0267-4de3-8877-374f82e619ab",
+      "name": "malware",
+      "is_family": true,
+      "spec_version": "2.1",
+      "created": "2021-07-15T17:01:33.960Z",
+      "modified": "2021-07-15T17:01:33.960Z",
+      "description": "One of the most high-profile pieces of malware in the current threat landscape is Zeus/Zbot, a nasty little trojan that has been employed by botnet operators around the world to steal banking credentials and other personal data, participate in click-fraud schemes, and likely numerous other criminal enterprises. It is the engine behind notorious botnets such as Kneber, which has recently made headlines worldwide. The following is an analysis of the network traffic generated by machines that Talos intentionally infected with known Zeus samples, in order to study post-infection behavior. The machines were all base installations of Windows XP, Service Pack 2, with no patches - i.e., designed to be as vulnerable as possible.",
+      "malware_types": [
+        "downloader",
+        "bot",
+        "trojan"
+      ],
+      "first_seen": "2006-11-13T19:00:00.000Z",
+      "aliases": [
+        "ZeuS",
+        "Zbot",
+        "Trojan.Zbot",
+        "Wsnpoem",
+        "Gorhax",
+        "Kneber"
+      ]
+    },
+    {
+      "source_ref": "threat-actor--7ad80bca-899e-467a-974b-ea36989cacb5",
+      "target_ref": "malware--4cfc6fab-0267-4de3-8877-374f82e619ab",
+      "type": "relationship",
+      "created": "2021-07-15T17:03:47.544Z",
+      "modified": "2021-07-15T17:03:47.544Z",
+      "id": "relationship--90939ad4-f07a-4f4b-8a75-4f1d386cc8b7",
+      "relationship_type": "uses"
+    }
+  ]
+}

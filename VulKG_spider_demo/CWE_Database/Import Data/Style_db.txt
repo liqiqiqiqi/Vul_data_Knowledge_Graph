@@ -1,0 +1,211 @@
+node {
+  diameter: 50px;
+  color: #A5ABB6;
+  border-color: #9AA1AC;
+  border-width: 0px;
+  text-color-internal: #FFFFFF;
+  font-size: 10px;
+}
+relationship {
+  color: #A5ABB6;
+  shaft-width: 1px;
+  font-size: 8px;
+  padding: 3px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: "<type>";
+}
+node.* {
+  color: #C990C0;
+  border-color: #b261a5;
+  text-color-internal: #FFFFFF;
+  defaultCaption: "<id>";
+}
+node.Language {
+  color: #DA7194;
+  border-color: #cc3c6c;
+  text-color-internal: #FFFFFF;
+  caption: "{name}";
+}
+node.CWE {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  caption: "{name}";
+  diameter: 80px;
+  border-width: 4px;
+}
+node.CVE {
+  color: #8DCC93;
+  border-color: #5db665;
+  text-color-internal: #2A2C34;
+  caption: "{name}";
+  diameter: 65px;
+}
+node.Technology {
+  caption: "{name}";
+  color: #569480;
+  border-color: #447666;
+  text-color-internal: #FFFFFF;
+}
+node.Detection_Method {
+  caption: "{name}";
+  color: #FFC454;
+  border-color: #d7a013;
+  text-color-internal: #2A2C34;
+}
+node.OS {
+  caption: "{name}";
+  color: #57C7E3;
+  border-color: #23b3d7;
+  text-color-internal: #2A2C34;
+}
+node.Architecture {
+  caption: "{name}";
+  color: #B1EFF5;
+  border-color: #7ed8f5;
+  text-color-internal: #2A2C34;
+}
+node.CAPEC {
+  caption: "{description}";
+  color: #C990C0;
+  border-color: #b261a5;
+  text-color-internal: #FFFFFF;
+  diameter: 30px;
+}
+node.Consequence {
+  caption: "{name}";
+  color: #F79767;
+  border-color: #f36924;
+  text-color-internal: #FFFFFF;
+}
+node.Impact {
+  caption: "{name}";
+  color: #F16667;
+  border-color: #eb2728;
+  text-color-internal: #FFFFFF;
+}
+node.Tool {
+  caption: "{name}";
+  color: #FBFF4B;
+  border-color: #d6bd1c;
+  text-color-internal: #2A2C34;
+}
+node.Base {
+  defaultCaption: "<id>";
+  caption: "{name}";
+}
+node.Class {
+  defaultCaption: "<id>";
+  caption: "{name}";
+  border-color: #40c437;
+}
+node.View {
+  defaultCaption: "<id>";
+  caption: "{name}";
+  border-color: #fae1e9;
+}
+node.Variant {
+  defaultCaption: "<id>";
+  caption: "{name}";
+  border-color: #cb00e6;
+}
+node.Pillar {
+  defaultCaption: "<id>";
+  caption: "{name}";
+  border-color: #c2bcbe;
+}
+node.Composite {
+  defaultCaption: "<id>";
+  caption: "{name}";
+  border-color: #1b207d;
+}
+node.Chain {
+  caption: "{name}";
+  border-color: #1239b8;
+}
+node.Category {
+  caption: "{name}";
+  border-color: #851400;
+}
+node.Deprecated {
+  caption: "{name}";
+  border-color: #000000;
+}
+relationship.CAUSES {
+  color: #F16667;
+  border-color: #eb2728;
+  text-color-internal: #FFFFFF;
+}
+relationship.FINDS {
+  color: #DBD000;
+  border-color: #23b3d7;
+  text-color-internal: #2A2C34;
+}
+relationship.PARENTOF {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 2px;
+}
+relationship.CHILDOF {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 2px;
+}
+relationship.CANFOLLOW {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 2px;
+}
+relationship.VIOLATES {
+  color: #F79767;
+  border-color: #f36924;
+  text-color-internal: #FFFFFF;
+}
+relationship.VULNERABLETO {
+  color: #8DCC93;
+  border-color: #5db665;
+  text-color-internal: #2A2C34;
+  shaft-width: 4px;
+}
+relationship.ATTACKPATTERNFOR {
+  color: #C990C0;
+  border-color: #b261a5;
+  text-color-internal: #FFFFFF;
+}
+relationship.PEEROF {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 2px;
+}
+relationship.CANPRECEDE {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 2px;
+}
+relationship.CANALSOBE {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 2px;
+}
+relationship.MEMBEROF {
+  color: #4C8EDA;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+}
+relationship.FOUNDIN {
+  color: #DA7194;
+  border-color: #cc3c6c;
+  text-color-internal: #FFFFFF;
+}
+relationship.DETECTS {
+  color: #FFC454;
+  border-color: #d7a013;
+  text-color-internal: #2A2C34;
+}

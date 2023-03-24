@@ -1,0 +1,35 @@
+// Here are some queries that can be used with the Neo4j database.
+
+// Find Related CWEs 
+// (Change ID Number to Change Results)
+match p = (a:CWE)--(b:CWE) where a.id_number = 79 return p
+
+// Return 100 Nodes
+match (n) return n limit 100
+
+//Find Tools for Finding CWE
+// (Change ID Number to Change Results)
+match (a:CWE)--(b:Tool) where a.id_number = 79
+return "CWE-" + a.id_number as CWE, b.name as tool_name, b.language as language_tested
+
+// Find Consequences and Impacts of CWE
+match p = (a:CWE)--(b:Consequence)--(c:Impact) 
+where a.id_number = 79 return p
+
+// Find CWE with Multiple Severe CVEs
+// (Change "Where" Conditionals to Change Results)
+match (a:CWE)-[:VULNERABLETO]->(b:CVE) where b.severity_number > 9
+with a, count(a) as numCWE, collect(b.id) as id
+where numCWE > 1
+return "CWE-"+ a.id_number as CWE_ID_Number, "Vulnerable to", id as CVE_ID
+
+// View the Different Types of CWEs
+match (a:CWE) 
+return distinct labels(a)[1] as CWE_Types, count(a:CWE_Types) as Number_of_Types
+
+//Finding Common CVEs within CWE Group
+match p=(a:CWE)--(b:CWE)--(c:CVE) where a.id_number = 200
+match path=(a:CWE)--(c:CVE)--(b:CWE) 
+return "CWE-" + a.id_number + " and CWE-" + b.id_number + " have in common:" as CWEs, "CVE-"+c.id as CVE
+
+
